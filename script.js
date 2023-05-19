@@ -1,11 +1,11 @@
 //your JS code here. If required.
 let color = document.querySelector('#colorSelect');
-let selectedColor="";
-color.onchange = (ev) =>{
-  const index = color.selectedIndex;
-  selectedColor = color.options[index];
-}
+let selectedOptions = Array.from(color.selectedOptions);
+
     
 document.querySelector('input').addEventListener('click',()=>{
- selectedColor.remove();
+  // Remove the selected options
+  selectedOptions.forEach(function(option) {
+    color.remove(option.index);
+  });
 });
